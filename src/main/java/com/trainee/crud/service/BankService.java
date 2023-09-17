@@ -1,5 +1,7 @@
 package com.trainee.crud.service;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -19,6 +21,11 @@ public class BankService {
 	
 	public BankModel findByAccount(String accountNumber) {
 		return  bankRepository.findByAccountNumber(accountNumber);
+	}
+
+	public List<BankModel> findAll() {
+		
+		return bankRepository.findAll();
 	}
 	
 }

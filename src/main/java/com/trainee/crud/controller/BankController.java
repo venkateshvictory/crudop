@@ -1,5 +1,7 @@
 package com.trainee.crud.controller;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -40,6 +42,10 @@ public class BankController {
 	@GetMapping("/findByAccountNumber/{id}")
 	public BankModel findByAccount(@PathVariable("id") String accountNumber) {
 		return bankService.findByAccount(accountNumber);
+	}
+	@GetMapping("/list")
+	public List<BankModel> list() {
+		return bankService.findAll();
 	}
 	
 }
